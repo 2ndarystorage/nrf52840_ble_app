@@ -463,3 +463,23 @@ BTN4 押下
 | `CONFIG_LOG` | y | ログシステム有効化 |
 | `CONFIG_LOG_DEFAULT_LEVEL` | 3 | ログレベル INF (1=ERR, 2=WRN, 3=INF, 4=DBG) |
 | `CONFIG_MAIN_STACK_SIZE` | 2048 | メインスレッドスタックサイズ (バイト) |
+
+---
+
+## Program Summary
+
+- nRF52840 DK 上で BLE の Peripheral/Central 役割を切り替えて操作できるサンプルアプリ。
+- BTN1〜BTN4 で ADV/Scan/接続/切断を切り替え、LED とログで状態を確認。
+- カスタム GATT サービス (Read/Write/Notify) を公開して Android からデータ送受信が可能。
+
+## How to Use
+
+- 前提: nRF Connect SDK (Zephyr) の環境構築済み。
+- ビルド/フラッシュ手順 (Not verified): `west build -b nrf52840dk_nrf52840` → `west flash` → シリアルログは `west espressif monitor` (115200 baud)。
+- 動作: BTN1=ADV ON/OFF、BTN2=Scan ON/OFF、BTN3=スキャンで見つけたデバイスへ接続、BTN4=接続中デバイスと切断。
+
+## Completion Status
+
+- Usable (demo)  
+  - ADV/Scan/接続/切断と GATT Read/Write/Notify の一連動作が実装済み。
+  - ただし製品向けの堅牢性・テスト・例外処理は限定的なため production ではない。
