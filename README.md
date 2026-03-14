@@ -514,3 +514,18 @@ BTN4 押下
 ## Completion Status
 
 - Usable (demo): 基本機能と GATT の Read/Write/Notify は実装済みだが、テストや堅牢化は未確認。
+
+## Program Summary
+
+- nRF52840 DK 上で BLE の Peripheral/Central 基本動作 (ADV/Scan/接続/切断) をボタン操作で切り替えるサンプル。
+- カスタム GATT サービスで Read/Write/Notify を提供し、Android などとデータ送受信が可能。
+
+## How to Use
+
+- Not verified: `west build -b nrf52840dk_nrf52840` → `west flash`。
+- Not verified: 115200 baud のシリアルターミナルでログ確認。
+- BTN1=ADV、BTN2=Scan、BTN3=接続、BTN4=切断。
+
+## Completion Status
+
+- Usable (demo): ADV/Scan/接続/切断と GATT Read/Write/Notify は実装済みだが、製品向けの検証や堅牢化は未確認。
